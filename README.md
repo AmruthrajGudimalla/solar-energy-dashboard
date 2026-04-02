@@ -89,12 +89,6 @@ solar-energy-monitoring-dashboard/
 streamlit run dashboard/production_dashboard.py
 ```
 
-or
-
-```bash
-streamlit run dashboard/management_dashboard.py
-```
-
 ## Future improvements
 
 - modular ETL package outside notebooks
