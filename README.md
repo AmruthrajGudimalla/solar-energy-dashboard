@@ -6,7 +6,7 @@ Dashboard and data pipeline for monitoring solar energy generation and supportin
 
 ## 📊 Dashboard Preview
 
-![Production Dashboard](images/Solar_Dashboard.png)
+![Solar Dashboard](Solar_Dashboard.png)
 
 ---
 
