@@ -1,99 +1,93 @@
 # Solar Energy Monitoring Dashboard
 
-A portfolio-ready end-to-end solar monitoring project that combines live operational data with weather forecast data for real-time visibility, short-term planning, and historical analysis.
+Dashboard and data pipeline for monitoring solar energy generation and supporting production planning based on energy availability.
 
-## Project overview
+---
 
-This project was built to monitor solar power generation and enrich it with weather context such as solar radiation, cloud cover, wind speed, and forecast information. The system brings together data ingestion, transformation, database storage, and dashboard visualization in one workflow.
+## 📊 Dashboard Preview
 
-## What the project does
+![Production Dashboard](images/production_dashboard.png)
 
-- collects live solar and weather-related data on a recurring schedule
-- stores live and historical data in MySQL
-- collects weather forecast data for the next 2–3 days
-- supports dashboard views for live operations and management analysis
-- visualizes KPIs, trends, forecast windows, and day-level planning signals
+---
 
-## Dashboards
+## 🎯 Business Context
 
-### 1. Production dashboard
-Focuses on operational monitoring:
-- current power
-- current solar radiation
-- current cloud cover
-- live power utilization trend
-- short-term weather forecast
-- next 3 hours solar suitability rating
+In industrial environments, energy availability directly impacts how and when production can run.
 
-### 2. Management dashboard
-Focuses on analysis and planning:
-- historical KPIs
-- aggregated raw / hourly / daily views
-- trend charts
-- solar vs power / cloud vs power relationship analysis
-- forecast-based day quality assessment
-- daily summary table
-- day-to-day comparison
+This project demonstrates how solar generation data and weather forecasts can be combined to:
+- monitor real-time energy production  
+- anticipate short-term availability  
+- support data-driven production planning  
 
-## Architecture
+---
 
-1. data is fetched from external solar and weather APIs
-2. data is cleaned and transformed in Python
-3. processed records are sent to a MySQL database
-4. Streamlit dashboards read from MySQL and visualize live + forecast + historical views
+## ⚙️ What this system does
 
-## Tech stack
+- Collects live solar and weather data  
+- Integrates short-term weather forecasts (2–3 days)  
+- Stores time-series data in MySQL  
+- Provides dashboards for both operations and management  
+- Translates raw data into actionable planning signals  
 
-- Python
-- Pandas
-- MySQL / MariaDB
-- Streamlit
-- Plotly
-- PHP endpoints for database insert/upsert
-- Jupyter / notebook-based prototyping
+---
 
-## Public repository notes
+## 🧭 Dashboard Views
 
-This public version is anonymized:
-- no credentials are included
-- company-specific branding was removed
-- secrets are expected via Streamlit `secrets.toml` or environment variables
-- screenshots are mock previews generated from the dashboard structure
+### 🔋 Production Dashboard (Operational)
+Focus: **real-time monitoring and short-term decisions**
 
-## Suggested repository structure
+- current power & solar radiation  
+- short-term forecast (next hours)  
+- power trend (last hours)  
+- solar suitability indicator  
 
-```text
-solar-energy-monitoring-dashboard/
-├── dashboard/
-│   ├── production_dashboard.py
-│   └── management_dashboard.py
-├── docs/
-│   ├── production_dashboard_mock.png
-│   └── management_dashboard_mock.png
-├── README.md
-├── requirements.txt
-├── .gitignore
-└── .streamlit/
-    └── secrets.toml.example
-```
+---
 
-## How to run
+### 📈 Management Dashboard (Analytical)
+Focus: **trend analysis and planning**
 
-1. create a virtual environment
-2. install dependencies from `requirements.txt`
-3. copy `.streamlit/secrets.toml.example` to `.streamlit/secrets.toml`
-4. fill in your database values
-5. run one of the dashboards:
+- historical KPIs  
+- daily / hourly aggregation  
+- solar vs power relationships  
+- forecast-based day quality  
+- production planning insights  
+
+---
+
+## 🏗️ System Architecture
+
+Solar API + Weather API
+↓
+Python (ETL)
+↓
+MySQL Database
+↓
+Streamlit Dashboards
+
+---
+
+## 🧰 Tech Stack
+
+- Python (pandas, requests)  
+- MySQL / MariaDB  
+- Streamlit  
+- Plotly  
+- PHP endpoints for data ingestion  
+
+---
+
+## 🔒 Public Repository Notes
+
+This version is adapted for portfolio use:
+
+- Uses anonymized / demo data  
+- No credentials or company systems included  
+- Dashboard visuals represent structure, not real production data  
+
+---
+
+## ▶️ How to Run
 
 ```bash
+pip install -r requirements.txt
 streamlit run dashboard/production_dashboard.py
-```
-
-## Future improvements
-
-- modular ETL package outside notebooks
-- centralized logging
-- input validation layer
-- tests for transformation logic
-- anomaly detection and alerting
-- forecast accuracy monitoring
